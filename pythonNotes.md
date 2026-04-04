@@ -480,3 +480,16 @@ add(30, 60)
 ```
 
 ---
+
+## Modules in Python
+
+- Module is a file with code like a package in Javascript
+- import brings it in.
+- 
+``` python
+import math
+print(math.sqrt(16))
+```
+
+---
+
