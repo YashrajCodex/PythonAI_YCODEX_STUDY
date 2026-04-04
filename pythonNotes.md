@@ -423,8 +423,60 @@ else:
     <code>
 ```
 
----
+## ⚙ Functions in Python
 
----
+- Basic function
+```python
+def greet():            #declare
+    print('Hello')
+
+greet()                 #call
+```
+- With parameters
+```python
+def printName(name):
+    print('This is your name', name)
+
+printName('Yash')
+```
+
+- Return values
+```python
+def printName(a, b):
+    return a + b
+
+printName(7, 8)
+```
+- Multiple return values
+```python
+def printName(a, b):
+    return a + b, a - b
+
+x, y = printName(7, 8)
+```
+
+- Default parameters
+```python
+def printName(name = "Guest"):
+    print('This is your name', name)
+
+printName()                 #Output: Guest
+printName('Yash')           #Output: Yash
+```
+
+- Arbitary arguments
+```python
+def add_all(*nums):
+    return sum(nums)
+
+add_all(7, 8, 8, 7, 30, 60)
+```
+
+- Lambda functions
+```python
+add = lambda a,b: a+b
+
+add(30, 60)
+```
 
 ---
