@@ -493,3 +493,75 @@ print(math.sqrt(16))
 
 ---
 
+
+---
+
+## Creating DataFrame in Pandas
+
+- first import pandas and numpy
+
+```python
+import pandas as pd
+import numpy as np
+```
+
+-then create DataFrame using following different ways
+
+#from Python dict (common)
+```python
+df = pd.DataFrame({
+    "name": ["Yash", "Aman"],
+    "age": [21,22]
+})
+```
+
+#from Python lists
+```python
+data = [
+    ["Yash", 21],
+    ["Aman", 22]
+]
+df = pd.DataFrame(data, columns=["name", "age"])
+```
+
+#from Python lists of dicts
+```python
+data = [
+    {"name": "Yash", "age": 21}, {"name": "Yash", "age": 22}
+]
+df = pd.DataFrame(data)
+```
+
+#from NumPy array
+```python
+arr = np.array([[1, 2], [3, 4]])
+
+df = pd.DataFrame(arr, columns= ["A", "B"])
+```
+
+#from Random NumPy data
+```python
+
+df = pd.DataFrame(np.random.rand(3, 3), columns=["A", "B", "C"])
+```
+- with Custom Index
+  
+```python
+
+df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
+
+```
+- to read from CSV/Excel
+
+```python
+    df = pd.read_csv("data.csv")
+    df = pd.read_csv("data.xlsx")
+```
+- NumPy is raw numbers
+- Pandas is labeled table
+- Quick inspection
+  - df.head()
+  - df.shape
+  - df.columns
+  - df.info()
+---
