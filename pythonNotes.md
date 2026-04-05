@@ -559,9 +559,45 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 ```
 - NumPy is raw numbers
 - Pandas is labeled table
-- Quick inspection
-  - df.head()
-  - df.shape
-  - df.columns
-  - df.info()
+
 ---
+
+## Quick inspection
+- Attributes
+  - df.shape         #to get no of rows and columns
+  - df.index           #to get access the index attribute
+  - df.columns
+  - df.dtypes           #to get datatype of the dataframe
+  - 
+- Methods
+  - pd.set_option('display.max_rows', _no. of rows_)    #to see all or specific number rows.
+  - df.head()       #to show first 5 rows of the dataframe
+  - df.tail()       #to show last 5 rows of the dataframe
+  - df.head(n)       #to show first n rows of the dataframe
+  - df.tail(n)       #to show last n rows of the dataframe
+  - df.info()       #to get info about the dataframe
+  - df.describe()       #to get basic statistics of the dataframe
+  - 
+---
+
+## Basic functions
+
+- len(df)               #to get total number of rows
+- max(df)               #to get highest index of the dataframe
+- min(df)               #to get lowest index of the dataframe
+- type(df)              #to get the type of dataframe
+- round(df, 2)             #to round the values of the dataframe
+
+---
+
+## Single columns from the dataframe
+
+- df.['_column-name_']
+- type(df['_column-name_'])
+- df.['_column-name_'].index
+- df.['_column-name_'].head()
+
+---
+
+## Multiple columns from the dataframe
+
