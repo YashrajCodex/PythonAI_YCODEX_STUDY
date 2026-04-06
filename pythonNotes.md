@@ -601,3 +601,11 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 
 ## Multiple columns from the dataframe
 
+- df[['col1', 'col2']]
+- df.loc[:, ["col1", "col2"]]             # means rows all and 2 columns
+- df.loc[:, [0, 2]]                       # selecting by index. this selects 1 and 3 columns
+- df.loc[:, 0:2]                          # selecting column in range. this selects 0 and 1 columns {2 excluded}
+- df.filter(like='sales')                 # selecting column starting with something
+- df.loc[:, df.columns != "age"]          # selecting column conditionally. This returns all columns except "age".
+- df.filter(regex="^a")                   # selecting column using regex. This returns columns starting with 'a'.
+- new_df = df[["name", "age"]]            # select and assign columns at the same time
