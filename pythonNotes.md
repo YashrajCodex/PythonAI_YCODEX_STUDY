@@ -612,4 +612,12 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 
 ---
 
-## 
+## Add a new column in the dataframe
+
+- df["new_column"] = 100                  #adds a column with same value for all rows
+- df["total"] = df['price'] * df['quantity']                  #adds a derived column buy multiplying 2 column
+- df['status'] = df['score'].apply(lambda x: "Pass" if x>50 else "Fail")           #adds a conditional column buy checking the value of other column
+- df['status'] = np.where(df['score'] > 50, "Pass", "Fail")           #same result as above but using a powerfull module: NumPy
+- df['name_upper'] = df["name"].str.upper()           #works because columns have method. This creates a new column with all uppercase letters of name column
+- df.insert(1, "new_column", df["price"] * 2)           #insert at specific position. This adds at index 1.
+- 
