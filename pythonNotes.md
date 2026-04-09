@@ -620,4 +620,21 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 - df['status'] = np.where(df['score'] > 50, "Pass", "Fail")           #same result as above but using a powerfull module: NumPy
 - df['name_upper'] = df["name"].str.upper()           #works because columns have method. This creates a new column with all uppercase letters of name column
 - df.insert(1, "new_column", df["price"] * 2)           #insert at specific position. This adds at index 1.
-- 
+
+# Math Operations
+
+## 1.1 In Columns
+
+- df_exams['column_name'].sum()             #to sum of a column
+- df_exams['column_name'].count()           #to count total number of rows
+- df_exams['column_name'].mean()            #to find mean
+- df_exams['column_name'].std()             #to find standard deviation of that column
+- df_exams['column_name'].max()             #to find max in that column
+- df_exams['column_name'].min()             #to find min in that column
+
+- df_exams['column_name'].describe()        #a faster way to do all that in one-line
+
+## 1.2 In Rows
+
+- df_exams['col1'] + df_exams['col2'] + df_exams['col3']             #to find the sum of the rows
+- ((df_exams['col1'] + df_exams['col2'] + df_exams['col3']) /3).round(2)             #to find the sum of the rows
