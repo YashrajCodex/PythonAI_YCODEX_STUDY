@@ -634,7 +634,13 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 
 - df_exams['column_name'].describe()        #a faster way to do all that in one-line
 
+- df_students['gender'].value_counts() #this counts total number of gender in the 'gender' column. value_counts(normalize=true) gives the decimal value of the percentage of the count.
+- 
+
 ## 1.2 In Rows
 
 - df_exams['col1'] + df_exams['col2'] + df_exams['col3']             #to find the sum of the rows
 - ((df_exams['col1'] + df_exams['col2'] + df_exams['col3']) /3).round(2)             #to find the sum of the rows
+
+# Sort a Dataframe
+
