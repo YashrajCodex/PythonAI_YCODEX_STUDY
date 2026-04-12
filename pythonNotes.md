@@ -644,3 +644,18 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 
 # Sort a Dataframe
 
+- df.sort_values(by='age')                  #this sorts the dataframe by 'age' column
+- df.sort_values(by='age', ascending= False)    #this sorts the dataframe by 'age' column in ascending order
+- df.sort_values(by=['age', 'name'])        #this sorts the dataframe by multiple column 'age' and 'name'
+- df.sort_index(ascending=False)            #this sorts the dataframe by index
+
+- df.sort_column(by='age', inplace=True)            #without inplace, this method returns a copy of the dataframe without mutating the original dataframe
+
+# Rename a Dataframe
+
+- df.rename(columns = {"old_name": "new_name"})             #renaming one column
+- df.rename(index = {0: "row1", 1: "row2"})                 #renaming the index values
+- df.rename(columns = {"name": "Name", "age": "Age"})       #Multiple column rename at once
+- df.columns = ["Name", "Age", "City"]              #this renames all the column in the given order. Length must be same
+
+- df.index.name = "ID"                              #this labels the index column
