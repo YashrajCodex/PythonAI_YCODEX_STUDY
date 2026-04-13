@@ -493,9 +493,6 @@ print(math.sqrt(16))
 
 ---
 
-
----
-
 ## Creating DataFrame in Pandas
 
 - first import pandas and numpy

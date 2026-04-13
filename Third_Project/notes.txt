@@ -1,0 +1,7 @@
+installed two new extensions to run this in VS Code. Python and Jupyter (from Microsoft)
+
+installed libraries:
+
+    1. numpy
+    2. matplotlib
+    3. ipykernel
