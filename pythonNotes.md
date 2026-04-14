@@ -656,3 +656,9 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 - df.columns = ["Name", "Age", "City"]              #this renames all the column in the given order. Length must be same
 
 - df.index.name = "ID"                              #this labels the index column
+
+# Pull data from URL
+
+- df = pd.read_csv('url')
+
+
