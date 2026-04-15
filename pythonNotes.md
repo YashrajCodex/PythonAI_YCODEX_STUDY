@@ -661,4 +661,35 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 
 - df = pd.read_csv('url')
 
+# Filter by one or multiple columns
+
+- df[df["age"] > 20]                        # this filters dataframe where age is greater than 20
+- df[(df["age"] > 20) & (df["city"] == "Delhi")]                # this filters dataframe where age is greater than 20 and city is Delhi
+- df[(df["age"] > 20) | (df["city"] == "Mumbai")]               # this filters dataframe where age is greater than 20 or city is Mumbai
+
+# np.where()
+
+- import numpy as np
+
+    df["status"] = np.where(df["age"] > 18, "Adult", "Minor")           # this creates a conditional column whose values are according to the condition
+
+- df["grade"] = np.where(df["marks"] > 90, "A",
+              np.where(df["marks"] > 75, "B", "C"))
+
+# np.select()
+
+- conditions = [
+    df["marks"] > 90,
+    df["marks"] > 75                                            # this is an advanced way, alternative of np.where(), for creating column of multiple conditions and values
+]
+
+choices = ["A", "B"]
+
+df["grade"] = np.select(conditions, choices, default="C")
+
+# isin()
+
+- df[df["city"].isin(["Delhi", "Mumbai"])]                      # this is an advanced way for filtering columns by multiple conditions
+
+
 
