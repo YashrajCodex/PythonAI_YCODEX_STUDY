@@ -563,7 +563,7 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 - Attributes
   - df.shape         #to get no of rows and columns
   - df.index           #to get access the index attribute
-  - df.columns
+  - df.columns          #to get list of all the columns in a dataframe
   - df.dtypes           #to get datatype of the dataframe
   - 
 - Methods
@@ -648,7 +648,7 @@ df = pd.DataFrame([[1, 2], [3, 4]], columns=["A", "B"], index=["row1", "row2"])
 
 - df.sort_column(by='age', inplace=True)            #without inplace, this method returns a copy of the dataframe without mutating the original dataframe
 
-# Rename a Dataframe
+# Rename in Dataframe
 
 - df.rename(columns = {"old_name": "new_name"})             #renaming one column
 - df.rename(index = {0: "row1", 1: "row2"})                 #renaming the index values
