@@ -1,7 +1,9 @@
-installed two new extensions to run this in VS Code. Python and Jupyter (from Microsoft)
+How to use pandas and numpy
 
-installed libraries:
+How to create columns and rows
 
-    1. numpy
-    2. matplotlib
-    3. ipykernel
+How to create entire dataset using Pandas and NumPy
+
+How to create columns via math operation with other columns
+
+How to sort and reaname, a column and index

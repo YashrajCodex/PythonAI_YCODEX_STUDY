@@ -689,7 +689,13 @@ df["grade"] = np.select(conditions, choices, default="C")
 
 # isin()
 
-- df[df["city"].isin(["Delhi", "Mumbai"])]                      # this is an advanced way for filtering columns by multiple conditions
+- df[df["city"].isin(["val1", "val2"])]                      # this is an advanced way for filtering columns by multiple conditions
 
+# duplicated()
 
+- df["city"].duplicated(["Col1", "Col2"])                      # this is to find duplicates in a dataset. It returns boolean
+- df["city"].duplicated(["Col1", "Col2"], keep='first')         # keeps the first duplicate as true. 'last' keeps the last duplicate as true. default is 'first'
 
+# drop-duplicates()
+- df["city"].drop-duplicates(["Col1", "Col2"]) # this is to delete duplicates in a dataset. It returns the dataset with non-duplicate values. It has same attributes as duplicated
+- df["city"].drop-duplicates(["Col1", "Col2"], keep = 'first', ignore_index=True) # to ignore original index and start from starting. default is false
