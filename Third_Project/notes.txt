@@ -1,7 +1,5 @@
-installed two new extensions to run this in VS Code. Python and Jupyter (from Microsoft)
+How to import, modify and save csv via web URL
 
-installed libraries:
+How to download multiple csv using loop
 
-    1. numpy
-    2. matplotlib
-    3. ipykernel
+How to perform these operations [Conditonal col additon, sorted, filter, created view, used .loc(), np.where(), isin(), duplicated(), drop_duplicates()]
