@@ -1,0 +1,81 @@
+employee_id,industry,experience_years,salary_usd,location,education_level
+1,Finance,0,119914,Urban,Master
+2,Healthcare,23,97545,Rural,High School
+3,Finance,18,183176,Urban,PhD
+4,Finance,6,86226,Rural,Bachelor
+5,Technology,17,110606,Rural,Bachelor
+6,Consulting,7,140515,Rural,PhD
+7,Technology,24,120598,Rural,Bachelor
+8,Retail,8,70029,Urban,Bachelor
+9,Finance,2,161963,Urban,PhD
+10,Retail,19,115254,Urban,Master
+11,Finance,12,70256,Rural,High School
+12,Retail,18,67279,Rural,Bachelor
+13,Technology,21,114614,Suburban,Bachelor
+14,Education,3,105857,Suburban,PhD
+15,Retail,5,67865,Suburban,Master
+16,Manufacturing,22,77332,Rural,High School
+17,Education,5,103845,Suburban,PhD
+18,Education,21,128505,Urban,Master
+19,Technology,25,158773,Suburban,Master
+20,Finance,6,140958,Urban,Master
+21,Consulting,20,216479,Urban,PhD
+22,Healthcare,7,105505,Rural,Master
+23,Consulting,18,182186,Suburban,PhD
+24,Healthcare,16,168943,Urban,PhD
+25,Finance,4,76333,Rural,Bachelor
+26,Finance,12,141437,Rural,PhD
+27,Manufacturing,17,65478,Rural,High School
+28,Manufacturing,24,145017,Urban,Master
+29,Consulting,5,186430,Urban,PhD
+30,Healthcare,16,75454,Rural,High School
+31,Education,4,104674,Urban,Master
+32,Technology,19,138638,Suburban,Master
+33,Finance,11,136498,Urban,Master
+34,Education,18,88924,Urban,High School
+35,Finance,24,142574,Urban,Bachelor
+36,Healthcare,8,169071,Urban,PhD
+37,Education,22,121236,Suburban,Master
+38,Marketing,16,164723,Urban,PhD
+39,Education,2,102277,Urban,Master
+40,Education,18,93326,Urban,Bachelor
+41,Technology,7,82827,Urban,High School
+42,Finance,16,112906,Suburban,Bachelor
+43,Education,17,90211,Rural,Bachelor
+44,Marketing,7,123239,Suburban,PhD
+45,Finance,3,140879,Suburban,PhD
+46,Consulting,14,73824,Rural,High School
+47,Technology,12,153147,Urban,Master
+48,Education,6,128824,Urban,PhD
+49,Healthcare,8,153870,Urban,PhD
+50,Marketing,25,113113,Urban,High School
+51,Technology,2,102317,Urban,Bachelor
+52,Marketing,15,86921,Suburban,Bachelor
+53,Healthcare,12,73190,Suburban,High School
+54,Marketing,9,123011,Rural,PhD
+55,Marketing,4,70133,Suburban,Bachelor
+56,Technology,18,85901,Rural,High School
+57,Technology,1,129153,Rural,PhD
+58,Healthcare,1,53845,Urban,High School
+59,Finance,21,110928,Suburban,Bachelor
+60,Education,18,63436,Rural,High School
+61,Consulting,21,155693,Suburban,Master
+62,Retail,7,69288,Suburban,Master
+63,Manufacturing,14,115705,Urban,Master
+64,Marketing,19,101017,Urban,High School
+65,Education,16,122436,Urban,Master
+66,Finance,7,112169,Suburban,Master
+67,Marketing,17,117732,Rural,Master
+68,Technology,21,129644,Rural,Master
+69,Healthcare,8,83728,Urban,High School
+70,Healthcare,8,95251,Rural,Master
+71,Retail,6,70608,Rural,Master
+72,Manufacturing,1,43604,Rural,High School
+73,Manufacturing,1,39786,Suburban,High School
+74,Manufacturing,5,103164,Rural,PhD
+75,Technology,3,50509,Rural,High School
+76,Technology,11,96176,Suburban,Bachelor
+77,Technology,9,150724,Urban,Master
+78,Education,21,82868,Rural,Bachelor
+79,Retail,24,109264,Rural,PhD
+80,Education,5,55812,Suburban,Bachelor
