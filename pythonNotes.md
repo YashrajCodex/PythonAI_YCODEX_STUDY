@@ -725,4 +725,25 @@ df["grade"] = np.select(conditions, choices, default="C")
 condition = df['col_name'] > condition_val
 - df.loc[condition, ['columns']] = val              # sets the value conditionally. sets the values where the condition is true
 
+## drop a row or column in a dataset
 
+`axis-1` = columns
+`axis-0` = rows
+
+- .drop() returns a copy so use inplace or set equlas with the df to save changes
+- 
+# Row
+- df.drop('A', axia=0, inplace=True)                  #this drops the row with index name as 'A'
+- df.drop(index = [1], inplace=True)                  #this drops the row with index val as '1'
+
+# Columns
+- df.drop('column_name', axis=1, True)                  #this drops the column by column_name
+- df.drop(columns = ['column_name'], inplace = True)    #this drops the column by column_name using colum attribute. axis is not required
+
+# sample()
+
+- df.sample(n: int | None = ..., frac=int | float | None, replace:bool = False, random_state=int, ignore_index: bool = False)
+
+note while giving frac val more than 1 we have to set replace = True
+
+# query()
