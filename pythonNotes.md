@@ -699,3 +699,30 @@ df["grade"] = np.select(conditions, choices, default="C")
 # drop-duplicates()
 - df["city"].drop-duplicates(["Col1", "Col2"]) # this is to delete duplicates in a dataset. It returns the dataset with non-duplicate values. It has same attributes as duplicated
 - df["city"].drop-duplicates(["Col1", "Col2"], keep = 'first', ignore_index=True) # to ignore original index and start from starting. default is false
+
+
+## Select rows/columns/cells in a dataset
+
+# loc   (selecting names)
+- df.loc[['rows_name'], ['column_name']]                #selecting rows and columns in a dataset
+- df.loc[:, ['column_name']]                #selecting all rows and certain columns in a dataset
+- df.loc[['rows_name'], :]                #selecting certain rows and all columns in a dataset
+- df.loc['row_name', 'col_name']           # selecting a column and a row results in selecting a cell
+
+# iloc  (selecting indexes)
+- df.iloc[0:14, 1:7]                #selecting rows and columns via indexes in a dataset
+- df.iloc[:, 4]                #selecting all rows and certain columns via indexes  in a dataset
+- df.iloc[4, :]                #selecting certain rows and all columns via indexes in a dataset
+- df.iloc[0, 1]           # selecting a column and a row results via indexes in selecting a cell
+
+## Set a value in a dataset
+
+- df.loc[['rows_name'], ['column_name']] = val                #sets the value in selected rows and columns in a dataset
+- df.loc[:, ['column_name']] = val                #sets the value in selected all rows and certain columns in a dataset
+- df.loc[['rows_name'], :] = val                #sets the value in selected certain rows and all columns in a dataset
+- df.loc['row_name', 'col_name'] = val           # sets the value in selected cell
+
+condition = df['col_name'] > condition_val
+- df.loc[condition, ['columns']] = val              # sets the value conditionally. sets the values where the condition is true
+
+
