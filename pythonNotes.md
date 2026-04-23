@@ -746,4 +746,202 @@ condition = df['col_name'] > condition_val
 
 note while giving frac val more than 1 we have to set replace = True
 
-# query()
+# query() — SQL-style filtering 🧠
+
+df.query("age > 20")
+df.query("age > 20 and city == 'Delhi'")
+df.query("age > 20 or city == 'Mumbai'")
+city = "Delhi"
+df.query("city == @city")
+df.query("`total sales` > 1000")    #columns with spaces
+
+# astype() — change data types 🔧
+
+df["age"] = df["age"].astype(int)
+df = df.astype({
+    "age": "int",
+    "salary": "float"
+})
+
+
+# apply() — run function on data ⚡
+
+df["age"].apply(lambda x: x + 1)
+df.apply(lambda row: row["age"] + row["salary"], axis=1)
+
+df["status"] = df["age"].apply(lambda x: "Adult" if x > 18 else "Minor")
+df["total"] = df.apply(
+    lambda row: row["price"] * row["quantity"],
+    axis=1
+)               # Multiple columns
+
+df["name"] = df["name"].apply(lambda x: x.upper())      # string manipulation
+
+## all dataframe core attributes and methods
+
+| Category        | Attribute / Method        | What it does |
+|----------------|--------------------------|-------------|
+| BASIC INFO     | df.shape                 | (rows, columns) |
+|                | df.size                  | total elements |
+|                | df.ndim                  | number of dimensions |
+|                | df.index                 | row labels |
+|                | df.columns               | column names |
+|                | df.dtypes                | datatype of each column |
+|                | df.values                | numpy array of data |
+|                | df.axes                  | [index, columns] |
+
+| INSPECTION     | df.head()                | first 5 rows |
+|                | df.tail()                | last 5 rows |
+|                | df.sample(n)             | random rows |
+|                | df.info()                | summary + memory |
+|                | df.describe()            | stats summary |
+|                | df.memory_usage()        | memory per column |
+
+| SELECTION      | df["col"]                | select column |
+|                | df[["c1","c2"]]          | multiple columns |
+|                | df.loc[]                 | label-based selection |
+|                | df.iloc[]                | index-based selection |
+|                | df.at[]                  | fast single value (label) |
+|                | df.iat[]                 | fast single value (index) |
+
+| FILTERING      | df.query()               | SQL-like filter |
+|                | df[df["col"] > x]        | boolean filter |
+|                | df.isin()                | match multiple values |
+|                | df.where()               | conditional replacement |
+
+| SORTING        | df.sort_values()         | sort by column |
+|                | df.sort_index()          | sort by index |
+
+| CLEANING       | df.drop()                | remove rows/columns |
+|                | df.dropna()              | remove nulls |
+|                | df.fillna()              | fill nulls |
+|                | df.replace()             | replace values |
+|                | df.rename()              | rename columns/index |
+|                | df.astype()              | change datatype |
+
+| DUPLICATES     | df.duplicated()          | find duplicates |
+|                | df.drop_duplicates()     | remove duplicates |
+
+| APPLY/TRANSFORM| df.apply()               | apply function |
+|                | df.applymap()            | element-wise apply |
+|                | df.map()                 | series mapping |
+|                | df.transform()           | transform values |
+
+| GROUPING       | df.groupby()             | group data |
+|                | df.agg()                 | aggregate |
+|                | df.size()                | count per group |
+|                | df.mean()/sum()/count()  | stats ops |
+
+| MERGING        | pd.merge()               | SQL join |
+|                | df.join()                | join on index |
+|                | pd.concat()              | stack data |
+
+| INDEXING       | df.set_index()           | set index |
+|                | df.reset_index()         | reset index |
+|                | df.reindex()             | change index |
+
+| ITERATION ⚠️   | df.iterrows()            | loop rows (slow) |
+|                | df.itertuples()          | faster row loop |
+
+| EXPORT         | df.to_csv()              | save CSV |
+|                | df.to_excel()            | save Excel |
+|                | df.to_json()             | save JSON |
+
+| IMPORT         | pd.read_csv()            | load CSV |
+|                | pd.read_excel()          | load Excel |
+|                | pd.read_json()           | load JSON |
+
+Game-Changers
+
+| Feature            | Why it's powerful |
+|-------------------|------------------|
+| df.query()        | Cleaner than boolean masks |
+| df.groupby()      | Core of analytics |
+| df.merge()        | SQL joins in Python |
+| df.apply()        | Custom logic |
+| df.astype()       | Fix broken data instantly |
+| df.isin()         | Multi-value filtering |
+| df.value_counts() | Quick frequency |
+| df.unique()       | Distinct values |
+| df.nunique()      | Count uniques |
+| df.corr()         | correlation matrix |
+| df.pivot_table()  | Excel pivot killer |
+| df.melt()         | reshape wide → long |
+| df.explode()      | expand lists into rows |
+
+cheat-sheet
+
+Inspect → head(), info()
+Select → loc, iloc
+Filter → query(), boolean
+Clean → dropna(), fillna()
+Transform → apply(), astype()
+Analyze → groupby()
+Combine → merge(), concat()
+Export → to_csv()
+
+## dropna() — remove missing values 🧹
+
+df.dropna()
+
+df.dropna(axis=1)       # this drops columns with null
+
+df.dropna(subset=["age"])       # Drops if specific column has null
+
+df.dropna(thresh=2)             # Keeps rows with at least X non-null values
+
+## pivot() — reshape (no aggregation)
+
+df.pivot(index="date", columns="city", values="sales")      # if duplicates then error
+
+## pivot_table() — pivot + aggregation 🔥
+
+df.pivot_table(
+    index="date",
+    columns="city",
+    values="sales",
+    aggfunc="sum"
+)
+
+- Other aggfunc:
+
+aggfunc="mean"
+aggfunc="count"
+aggfunc="max"
+
+- Multiple aggregation
+``` python
+df.pivot_table(
+    index="city",
+    values="sales",
+    aggfunc=["sum", "mean"]
+)
+```
+# 🔥 When to use what
+`pivot()` → clean data, no duplicates
+
+`pivot_table()` → real-world messy data
+
+## plot()
+
+df.plot()
+
+df.plot(kind="line")
+
+df.plot(kind="bar")
+
+df["age"].plot(kind="hist")
+
+- Plot after pivot
+
+    ``` python
+    pivot_df = df.pivot_table(
+        index="date",
+        columns="city",
+        values="sales",
+        aggfunc="sum"
+    )
+
+    pivot_df.plot(kind="bar")
+```
+
