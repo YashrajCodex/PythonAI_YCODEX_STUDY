@@ -945,3 +945,4 @@ df["age"].plot(kind="hist")
     pivot_df.plot(kind="bar")
 ```
 
+<!-- piechar, boxplot -->
