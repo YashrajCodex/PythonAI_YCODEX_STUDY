@@ -1,0 +1,2 @@
+How to use loc() & iloc()
+How to pivot and plot
